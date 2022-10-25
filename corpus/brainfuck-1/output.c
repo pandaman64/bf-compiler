@@ -27,7 +27,7 @@ int main() {
     basic_block_0(buffer);
 }
 
-// TODO: noinline
+__attribute__((noinline))
 char rt_getchar() {
     int c = getchar();
     if (c < 0) {
@@ -37,7 +37,7 @@ char rt_getchar() {
     }
 }
 
-// TODO: noinline
+__attribute__((noinline))
 void rt_putchar(char c) {
     if (putchar(c) < 0) {
         exit(1);
@@ -59,11 +59,10 @@ void basic_block_0(char *pointer) {
     (*pointer)++;
     (*pointer)++;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_59(pointer);
+        __attribute__((musttail)) return basic_block_59(pointer);
     } else {
-        basic_block_71(pointer);
+        __attribute__((musttail)) return basic_block_71(pointer);
     }
 }
 
@@ -80,11 +79,10 @@ void basic_block_59(char *pointer) {
     pointer++;
     (*pointer)--;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_59(pointer);
+        __attribute__((musttail)) return basic_block_59(pointer);
     } else {
-        basic_block_71(pointer);
+        __attribute__((musttail)) return basic_block_71(pointer);
     }
 }
 
@@ -100,11 +98,10 @@ void basic_block_71(char *pointer) {
     (*pointer)++;
     (*pointer)++;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_82(pointer);
+        __attribute__((musttail)) return basic_block_82(pointer);
     } else {
-        basic_block_90(pointer);
+        __attribute__((musttail)) return basic_block_90(pointer);
     }
 }
 
@@ -117,11 +114,10 @@ void basic_block_82(char *pointer) {
     pointer++;
     (*pointer)--;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_82(pointer);
+        __attribute__((musttail)) return basic_block_82(pointer);
     } else {
-        basic_block_90(pointer);
+        __attribute__((musttail)) return basic_block_90(pointer);
     }
 }
 
@@ -143,22 +139,20 @@ void basic_block_90(char *pointer) {
     (*pointer)++;
     rt_putchar(*pointer);
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_107(pointer);
+        __attribute__((musttail)) return basic_block_107(pointer);
     } else {
-        basic_block_109(pointer);
+        __attribute__((musttail)) return basic_block_109(pointer);
     }
 }
 
 void basic_block_107(char *pointer) {
     (*pointer)--;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_107(pointer);
+        __attribute__((musttail)) return basic_block_107(pointer);
     } else {
-        basic_block_109(pointer);
+        __attribute__((musttail)) return basic_block_109(pointer);
     }
 }
 
@@ -173,11 +167,10 @@ void basic_block_109(char *pointer) {
     (*pointer)++;
     (*pointer)++;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_119(pointer);
+        __attribute__((musttail)) return basic_block_119(pointer);
     } else {
-        basic_block_128(pointer);
+        __attribute__((musttail)) return basic_block_128(pointer);
     }
 }
 
@@ -190,11 +183,10 @@ void basic_block_119(char *pointer) {
     pointer++;
     (*pointer)--;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_119(pointer);
+        __attribute__((musttail)) return basic_block_119(pointer);
     } else {
-        basic_block_128(pointer);
+        __attribute__((musttail)) return basic_block_128(pointer);
     }
 }
 
@@ -214,11 +206,10 @@ void basic_block_128(char *pointer) {
     (*pointer)++;
     (*pointer)++;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_143(pointer);
+        __attribute__((musttail)) return basic_block_143(pointer);
     } else {
-        basic_block_152(pointer);
+        __attribute__((musttail)) return basic_block_152(pointer);
     }
 }
 
@@ -232,11 +223,10 @@ void basic_block_143(char *pointer) {
     pointer++;
     (*pointer)--;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_143(pointer);
+        __attribute__((musttail)) return basic_block_143(pointer);
     } else {
-        basic_block_152(pointer);
+        __attribute__((musttail)) return basic_block_152(pointer);
     }
 }
 
@@ -253,11 +243,10 @@ void basic_block_152(char *pointer) {
     (*pointer)++;
     (*pointer)++;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_164(pointer);
+        __attribute__((musttail)) return basic_block_164(pointer);
     } else {
-        basic_block_171(pointer);
+        __attribute__((musttail)) return basic_block_171(pointer);
     }
 }
 
@@ -269,11 +258,10 @@ void basic_block_164(char *pointer) {
     pointer++;
     (*pointer)--;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_164(pointer);
+        __attribute__((musttail)) return basic_block_164(pointer);
     } else {
-        basic_block_171(pointer);
+        __attribute__((musttail)) return basic_block_171(pointer);
     }
 }
 
@@ -301,22 +289,20 @@ void basic_block_171(char *pointer) {
     (*pointer)--;
     rt_putchar(*pointer);
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_194(pointer);
+        __attribute__((musttail)) return basic_block_194(pointer);
     } else {
-        basic_block_196(pointer);
+        __attribute__((musttail)) return basic_block_196(pointer);
     }
 }
 
 void basic_block_194(char *pointer) {
     (*pointer)--;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_194(pointer);
+        __attribute__((musttail)) return basic_block_194(pointer);
     } else {
-        basic_block_196(pointer);
+        __attribute__((musttail)) return basic_block_196(pointer);
     }
 }
 
@@ -331,11 +317,10 @@ void basic_block_196(char *pointer) {
     (*pointer)++;
     (*pointer)++;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_207(pointer);
+        __attribute__((musttail)) return basic_block_207(pointer);
     } else {
-        basic_block_215(pointer);
+        __attribute__((musttail)) return basic_block_215(pointer);
     }
 }
 
@@ -348,11 +333,10 @@ void basic_block_207(char *pointer) {
     pointer++;
     (*pointer)--;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_207(pointer);
+        __attribute__((musttail)) return basic_block_207(pointer);
     } else {
-        basic_block_215(pointer);
+        __attribute__((musttail)) return basic_block_215(pointer);
     }
 }
 
@@ -361,22 +345,20 @@ void basic_block_215(char *pointer) {
     (*pointer)++;
     rt_putchar(*pointer);
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_219(pointer);
+        __attribute__((musttail)) return basic_block_219(pointer);
     } else {
-        basic_block_221(pointer);
+        __attribute__((musttail)) return basic_block_221(pointer);
     }
 }
 
 void basic_block_219(char *pointer) {
     (*pointer)--;
 
-    // TODO: tailcall
     if (*pointer) {
-        basic_block_219(pointer);
+        __attribute__((musttail)) return basic_block_219(pointer);
     } else {
-        basic_block_221(pointer);
+        __attribute__((musttail)) return basic_block_221(pointer);
     }
 }
 

@@ -84,7 +84,7 @@ int main() {
     basic_block_0(buffer);
 }
 
-// TODO: noinline
+__attribute__((noinline))
 char rt_getchar() {
     int c = getchar();
     if (c < 0) {
@@ -94,7 +94,7 @@ char rt_getchar() {
     }
 }
 
-// TODO: noinline
+__attribute__((noinline))
 void rt_putchar(char c) {
     if (putchar(c) < 0) {
         exit(1);
@@ -128,11 +128,10 @@ void rt_putchar(char c) {
             } => writeln!(
                 writer,
                 r#"
-    // TODO: tailcall
     if (*pointer) {{
-        {}(pointer);
+        __attribute__((musttail)) return {}(pointer);
     }} else {{
-        {}(pointer);
+        __attribute__((musttail)) return {}(pointer);
     }}"#,
                 on_nonzero.to_function_name(),
                 on_zero.to_function_name()
